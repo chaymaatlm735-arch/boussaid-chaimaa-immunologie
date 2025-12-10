@@ -8,6 +8,7 @@
 
 
 import pandas as tb
+import numpy as np
 # donnes : sequences ADN , Longeur , Pourcentage GC
 data ={ 
     "sequence":["ATGCGTACGTA","GCTAGCTAGGCC","ATGCGCGTAAGT"," TACGATCGTA","ATGAAAGGCTT","CGTACGTAGC","TTAACCGGAT"],
@@ -18,14 +19,14 @@ data ={
 #creation d un DataFrame (tableau pandas)
 df= tb.DataFrame(data)
 print("************** Creation et Affichage ***************","\n""\n")
-#affichage de tableau 
+#1)affichage de tableau 
 print("Tableau des sequences ADN :", "\n")
 print(df)
-# afficher uniquement la Longeur 
+# 2)afficher uniquement la Longeur 
 Longeur =df["Longeur"]
 print("********* longeur *********","\n")
 print(Longeur,"\n")
-# filtrer la longeur > 10 
+#3) filtrer la longeur > 10 
 print("********* Filtrage avec longeur >10 ********* ")
 filtered_df = df[df["Longeur"]>10]
 print(filtered_df)
@@ -35,6 +36,17 @@ print("************* Calcul de la moyenne *************")
 average_gc = df["Pourcentage GC"].mean()
 print(f"Pourcentage moyen de GC : {average_gc:.3f}%")
 
+#5) Ajouter une colonne "Catégorie GC"
+conditions = [
+    (df['Pourcentage GC'] >= 55),
+    (df['Pourcentage GC'] >= 45) & (df['Pourcentage GC'] < 55),
+    (df['Pourcentage GC'] < 45)
+]
+
+choix = ['Riche', 'Moyen', 'Faible']
+df['categorie GC'] = np.select(conditions, choix, default='inconnu')
+
+print(df)
 
 
 
