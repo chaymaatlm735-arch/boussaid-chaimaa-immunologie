@@ -48,6 +48,11 @@ df['categorie GC'] = np.select(conditions, choix, default='inconnu')
 
 print(df)
 
+ #6) Ajouter une colonne donnant le nombre de "G" dans chaque séquence
+df['Nombre de G'] = df["sequence"].str.count("G")
+
+print("===== nombre de G ajoutés ======")
+print(df, "\n")
 
 
 
