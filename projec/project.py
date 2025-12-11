@@ -77,9 +77,9 @@ print(df, "\n")
 
 
 
-#sauvgarder et chargement des donnes avec panda 
+#7)sauvgarder et chargement des donnes avec panda 
 df.to_csv("tableau_sequences.csv",inedx=False)
 
-#telecharger un fichier csv et mettre dans dataframe
+#8)telecharger un fichier csv et mettre dans dataframe
 df_loaded = tb.read_csv("tableau_sequences.csv")
 print(df_loaded)
