@@ -1,7 +1,7 @@
 #Boussaid Chaimaa M1 immunologie 08/12/2025
 #Belkenadil Bouchra Sanaa Nesrine
 #Kaid Ines Safia
-#Djabeur Djezzar Djezia 
+#Djabeur Djezzar Djazia 
 #Benameur Hidayat
 #Hamzaoui Aroua 
 
